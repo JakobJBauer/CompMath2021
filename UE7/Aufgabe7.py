@@ -11,6 +11,10 @@ def get_common_elements(li1: list, li2: list) -> list:
     return list(filter(lambda x: x in li2, li1))
 
 
+def dict2lists(di: dict) -> list:
+    return [[key] + [item for item in values] for key, values in di.items()]
+
+
 print('Problem A')
 t_dict = OrderedDict(a=12, b=152)
 el = {'c': 1}
@@ -23,3 +27,7 @@ l1 = [1, 5, 5]
 l2 = [3, 4, 5, 5, 10]
 l3 = [5, 5, 10, 20]
 print(get_common_elements(get_common_elements(l1, l2), l3))
+
+print('\nProblem C')
+inp = {'gfg': [1, 3, 5], 'is': [7, 6], 'best': [4, 5]}
+print(dict2lists(inp))
