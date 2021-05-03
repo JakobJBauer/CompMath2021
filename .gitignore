@@ -1,2 +1,4 @@
-./UE6/.idea
+*.gitignore
+*.xml
+*.iml
 *venv*
