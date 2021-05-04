@@ -1,47 +1,44 @@
+def dict2keylist(di: dict) -> list:
+    """Transforms a given dictionary to a list of its keys"""
+    if not di:
+        return []
+    key = next(iter(di))
+    value = di.get(key)
+    return [key] + dict2keylist(value)
+
+
+def keylist2dict(li: list) -> dict:
+    """Transforms a given list of keys to a dictionary"""
+    return {li.pop(0): keylist2dict(li)} if li else {}
+
+
 def invert_dict(di: dict) -> dict:
-    """Inverts dictionary if it has less than or two layers"""
-    outp = {}
-    for key, value in di.items():
-        if value == {}:
-            outp[key] = value
-        else:
-            outp[next(iter(value))] = invert_dict({key: value[next(iter(value))]})
-    return outp
-
-
-def invert_dict_multilayer(di:dict) -> dict:
-    """Inverts dictionary even with multiple layers"""
-    # ToDO: Nothing works here dude
-    outp = {}
-    for key, value in di.items():
-        if value == {}:
-            outp[key] = value
-        else:
-            outp = swap_keys(invert_dict_multilayer(value))
-    return outp
-
-
-def swap_keys(di: dict) -> dict:
-    outp = {}
-    for key, value in di.items():
-        if value == {}:
-            outp[key] = value
-        else:
-            outp[next(iter(value))] = {key: value[next(iter(value))]}
-    return outp
+    output = {}
+    for key in di:
+        output.update(keylist2dict(list(reversed(dict2keylist({key: di[key]})))))
+    return output
 
 
 test_dict = {'a': {'b': {}}}
-print('Swap keys', swap_keys(test_dict))
+print('Dict2Keys ', dict2keylist(test_dict))
 test_dict = {'a1': {'b1': {}}, 'a2': {'b2': {}}}
-print('Swap keys', swap_keys(test_dict))
+print('Dict2Keys ', dict2keylist(test_dict))
 test_dict = {'a': {'b1': {}, 'b2': {}}}     # This structure is impossible, handling is: take first key (unordered)
-print('Swap keys', swap_keys(test_dict))
+print('Dict2Keys ', dict2keylist(test_dict))
 
-test_dict = {'a': {'b': {}}, 'd': {'e': {}}, 'f': {'g': {}}}
-print('\nInvert dict: ', invert_dict(test_dict))
-print('Invert dict multilayer: ', invert_dict_multilayer(test_dict))
+test_list = ['a', 'b', 'c']
+print('\nList2Dict: ', keylist2dict(test_list))
+test_list = ['a1', 'b2', 'c3']
+print('List2Dict: ', keylist2dict(test_list))
+test_list = ['a', 'b', 'g', 'j']
+print('List2Dict: ', keylist2dict(test_list))
 
+test_dict = {'a': {'b': {}}}
+print('\nInverseDict ', invert_dict(test_dict))
+test_dict = {'a1': {'b1': {}}, 'a2': {'b2': {}}}
+print('InverseDict ', invert_dict(test_dict))
+test_dict = {'a': {'b1': {}, 'b2': {}}}     # This structure is impossible, handling is: take first key (unordered)
+print('InverseDict ', invert_dict(test_dict))
 test_dict = {'a': {'b': {'c': {'d': {}, 'e': {}, 'f': {}}}}, 'g': {'h': {}, 'i': {'j': {}}}, 'k': {'l': {}}}
-print('\nInvert dict: ', invert_dict(test_dict))
-print('Invert dict multilayer: ', invert_dict_multilayer(test_dict))
+print('InverseDict ', invert_dict(test_dict))
+
