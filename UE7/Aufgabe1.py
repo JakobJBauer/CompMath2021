@@ -9,6 +9,9 @@ def f(s: str, capitalize: bool = False) -> List[str]:
     return s.strip().upper().split(' ') if capitalize else s.strip().split(' ')
 
 
+print('Problem A')
 print(get_filtered_string('replace my name is JJ. replace I am 19', 'replace', 'Hello'))
+
+print('\nProblem B')
 print(f("    Put me in a list "))
 print(f("    Put me in a list i said", True))

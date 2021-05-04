@@ -22,7 +22,10 @@ class VectorPlus(Vector):  # BillaPlus
         return [[z1_el * z2_el for z2_el in z2] for z1_el in z1]
 
 
+print('Problem A')
 print(Vector.add([1, 2, 3, 4], [5, 6, 7, 8]))
 print(Vector.scalar(4.3, [5, 6, 7, 8]))
+
+print('\bProblem B')
 print(VectorPlus.vector_prod([1, 2, 3], [3, 4, 5]))
 print(VectorPlus.tensor([1, 2, 3], [3, 4, 5]))

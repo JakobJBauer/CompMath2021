@@ -20,18 +20,29 @@ def sinus(x):
 
 
 def comp(l: list):
-    output = l[0]
-    for function in l[1:]:
-        output = output(function)
+    def inner(x):
+        output = l[0](x)
+        for function in l[1:]:
+            output = function(output)
+        return output
+    return inner
 
-    def comp_inner(x):
-        return output(x)
-    return comp_inner
 
-
+print('Problem A')
 print(straight())
 print(sinus())
 
+print('\n\nProblem B')
+print('\nRollercoaster:')
 cum_func = comp([math.sin, math.cos, math.sqrt, math.tan])
 print(cum_func)
+print(cum_func(12))
+print(cum_func(120))
+print(cum_func(1200))
+
+print('\nReal big:')
+cum_func2 = comp([math.exp, math.floor])
+print(cum_func2)
+print(cum_func2(20))
+print(cum_func2(200))
 
