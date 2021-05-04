@@ -1,3 +1,15 @@
+def invert_dict_deprecated(di: dict) -> dict:
+    """DEPRECATED
+    Inverts dictionary if it has less than or two layers"""
+    outp = {}
+    for key, value in di.items():
+        if not value:
+            outp[key] = value
+        else:
+            outp[next(iter(value))] = invert_dict({key: value[next(iter(value))]})
+    return outp
+
+
 def dict2keylist(di: dict) -> list:
     """Transforms a given dictionary to a list of its keys"""
     if not di:
