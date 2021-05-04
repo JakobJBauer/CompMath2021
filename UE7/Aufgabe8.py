@@ -14,6 +14,23 @@ def midpointrule(a, b, f, n) -> list:
     return output_vector
 
 
-print('A')
-a, b, f, n = 1, 5, math.sin, 5
-print('Input: ', a, b, f, n, '\nOutput:', midpointrule(a, b, f, n))
+a, b, f, n = -5, 5, lambda x: x**2, 10
+result = midpointrule(a, b, f, n)
+print('\nInput: ', a, b, f, n, '\nOutput:', result, '\nLast element: ', result[-1], '\n')
+
+a, b, f, n = -1, 1, lambda x: math.exp(x), 10
+result = midpointrule(a, b, f, n)
+print('\nInput: ', a, b, f, n, '\nOutput:', result, '\nLast element: ', result[-1], '\n')
+
+a, b, f, n = -1, 1, lambda x: 5*x, 10
+result = midpointrule(a, b, f, n)
+print('\nInput: ', a, b, f, n, '\nOutput:', result, '\nLast element: ', result[-1], '\n')
+
+a, b, f, n = -1, 1, lambda x: -5*x, 10
+result = midpointrule(a, b, f, n)
+print('\nInput: ', a, b, f, n, '\nOutput:', result, '\nLast element: ', result[-1], '\n')
+
+a, b, f, n = -1, 1, lambda x: 5, 10
+result = midpointrule(a, b, f, n)
+print('\nInput: ', a, b, f, n, '\nOutput:', result, '\nLast element: ', result[-1], '\n')
+
