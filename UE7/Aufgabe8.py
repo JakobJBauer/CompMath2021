@@ -26,6 +26,10 @@ a, b, f, n = -1, 1, lambda x: 5*x, 10
 result = midpointrule(a, b, f, n)
 print('\nInput: ', a, b, f, n, '\nOutput:', result, '\nLast element: ', result[-1], '\n')
 
+a, b, f, n = -1, 2, lambda x: 5*x, 10
+result = midpointrule(a, b, f, n)
+print('\nInput: ', a, b, f, n, '\nOutput:', result, '\nLast element: ', result[-1], '\n')
+
 a, b, f, n = -1, 1, lambda x: -5*x, 10
 result = midpointrule(a, b, f, n)
 print('\nInput: ', a, b, f, n, '\nOutput:', result, '\nLast element: ', result[-1], '\n')
