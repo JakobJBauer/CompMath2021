@@ -12,7 +12,7 @@ def order_string(string_input: str) -> str:     # insertion sort
     for i in range(1, len(li)):
         pivot = li[i]
         j = i - 1
-        while li[j] > pivot and j >= 0:
+        while li[j].lower() > pivot.lower() and j >= 0:
             li[j + 1] = li[j]
             j -= 1
         li[j + 1] = pivot
@@ -41,8 +41,8 @@ def contains_sublist(li: list) -> bool:
 
 def concat_by_range(li: list, n: int) -> list:
     output = []
-    for el in li:
-        for i in range(n):
+    for i in range(n):
+        for el in li:
             output.append(str(el) + str(i+1))
     return output
 

@@ -36,7 +36,7 @@ def even_floats(n: float) -> int:
     # digits pre decimal point
     number_of_even_digits = even(int(split_number[0]))
     # digits post decimal point, only the first 10
-    number_of_even_digits += even(int(split_number[1][0:9]))
+    number_of_even_digits += even(int(split_number[1][:9]))
     return number_of_even_digits
 
 

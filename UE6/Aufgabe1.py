@@ -1,4 +1,4 @@
-def convert_to_integer(tuple_input: tuple[int, ...]) -> int:
+def convert_to_integer(tuple_input):
     return sum([tuple_input[-1-i] * 10 ** i for i in range(len(tuple_input) - 1, -1, -1)])
     # output = ""
     # for number in tuple_input:
