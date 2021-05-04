@@ -15,7 +15,7 @@ def dict2lists(di: dict) -> list:
     return [[key] + [item for item in values] for key, values in di.items()]
 
 
-def invert_dict_deprecated(di: dict) -> dict:
+def inverse_dict(di: dict) -> dict:
     """DEPRECATED
     Inverts dictionary if it has less than or two layers"""
     outp = {}
