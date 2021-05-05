@@ -5,9 +5,7 @@ def do_crazy_string_stuff(s1: str, s2: str) -> str:
 
 def flipperino(s:str) -> str:
     s = s.split(' ')
-    buffer = s[0]
-    s[0] = s[-1]
-    s[-1] = buffer
+    s[0], s[-1] = s[-1], s[0]
     s = ' '.join(s)
     return do_crazy_string_stuff(s, '')
 
