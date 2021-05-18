@@ -8,7 +8,6 @@ class Vector:
     def __iter__(self):
         return iter(self.vector)
 
-
     def __add__(self, other):
         if len(self.vector) != len(other):
             raise ValueError(f'Dimensions {len(self.vector)} and {len(other)} do not match')
