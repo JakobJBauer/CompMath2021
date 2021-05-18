@@ -59,9 +59,9 @@ print('Odd: ', odd(19998))
 print('Even: ', even(19998))
 
 print('\nProblem 2, B')
-print('Odd: ', odd_floats(19998.892364212343))      # should be 9
+print('Odd: ', odd_floats(5.000))      # should be 9
 print('Odd: ', odd_floats(19998.89236421))      # should be 8
-print('Even: ', even_floats(19998.892364212343))    # should be 7
+print('Even: ', even_floats(5.000))    # should be 7
 print('Even: ', even_floats(19998.89236421))    # should be 6
 
 print('\nProblem 2, C')

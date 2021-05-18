@@ -12,10 +12,12 @@ class Complex:
         return self.z1[0] + self.z2[0], self.z1[1] + self.z2[1]
 
     def multiply(self) -> Tuple[float, float]:
-        return self.z1[0] * self.z2[0], self.z1[1] * self.z2[1]
+        erg = complex(self.z1[0], self.z1[1]) * complex(self.z2[0], self.z2[1])
+        return erg.real, erg.imag
 
     def divide(self) -> Tuple[float, float]:
-        return self.z1[0] / self.z2[0], self.z1[1] / self.z2[1]
+        erg = complex(self.z1[0], self.z1[1]) / complex(self.z2[0], self.z2[1])
+        return erg.real, erg.imag
 # end copy
 
 
