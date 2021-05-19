@@ -28,11 +28,12 @@ class Vector:
         return len(self)
 
 
-a = Vector([1, 2, 3, 4])
-b = Vector([2, 3, 4, 5])
-print('a + b:', (a+b).sum())
-print('a - b:', (a-b).sum())
-print('sum of a:', a.sum())
-print('ncount of a:', a.ncount())
-print('norm of a, grade 2:', a.norm(2))
-print('norm of a, grade 4:', a.norm(4))
+if __name__ == '__main__':
+    a = Vector([1, 2, 3, 4])
+    b = Vector([2, 3, 4, 5])
+    print('a + b:', (a+b).sum())
+    print('a - b:', (a-b).sum())
+    print('sum of a:', a.sum())
+    print('ncount of a:', a.ncount())
+    print('norm of a, grade 2:', a.norm(2))
+    print('norm of a, grade 4:', a.norm(4))
