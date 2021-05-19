@@ -35,7 +35,7 @@ class VectorComplex(Vector):
         return sum(self.real_part), sum(self.complex_part)
 
     def norm(self, p):
-        return sum(map(lambda x: (x[0]**2 + x[1]**2)**p, zip(self.real_part, self.complex_part)))**(1/p)
+        return sum(map(lambda x: ((x[0]**2 + x[1]**2)**(1/2))**p, zip(self.real_part, self.complex_part)))**(1/p)
 
 
 a = VectorComplex([1, 2, 3, 4, 5], [1, 1, 1, 1, 1])

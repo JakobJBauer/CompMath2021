@@ -32,3 +32,4 @@ print('Derived once, x: 5, Output:', derived_polynom_function.poly_eval(5))     
 
 derived_5_times = Poly(polynom_function.poly_der_coef(5))
 print('Derived 5 times:', derived_5_times.poly_eval(5))     # should be -1 200
+
