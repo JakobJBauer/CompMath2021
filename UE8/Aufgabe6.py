@@ -2,7 +2,7 @@ import numpy as np
 
 n = 5
 
-matrix = np.zeros((n, n))
+matrix = np.zeros((n, n), dtype=np.int8)
 np.fill_diagonal(matrix, 1)
 matrix = np.rot90(matrix)
 matrix[:, -1] = 1
