@@ -1,7 +1,7 @@
-from UE8 import Aufgabe3
+from UE8.Aufgabe3 import Vector
 
 
-class VectorComplex(Aufgabe3.Vector):
+class VectorComplex(Vector):
     def __init__(self, real, complex_):
         if len(real) != len(complex_):
             raise ValueError(f'Dimensions {len(real)} and {len(complex_)} do not match')
