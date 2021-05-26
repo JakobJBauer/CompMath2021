@@ -1,4 +1,5 @@
 import numpy as np
+import random
 
 
 def solve_u(U, b):
@@ -13,6 +14,17 @@ def solve_u(U, b):
             (b[i] - weighted_sum) / U[i, i]
         )
     return np.array(x[::-1])
+
+
+def gen_random_expression():
+    dim = random.randint(1, 10)
+    U = np.zeros((dim, dim))
+    for x in range(dim):
+        for y in range(dim):
+            if x <= y:
+                U[x, y] = random.randint(1, 1000)
+    b = np.array([random.randint(1, 100) for _ in range(dim)])
+    return U, b
 
 
 if __name__ == '__main__':
@@ -31,3 +43,9 @@ if __name__ == '__main__':
 
     print(solve_u(U, b))
     print(np.linalg.inv(U) @ b)
+
+    for _ in range(int(input('Number of random samples: '))):
+        U, b = gen_random_expression()
+        print('\n', solve_u(U, b))
+        print(np.linalg.inv(U) @ b)
+
